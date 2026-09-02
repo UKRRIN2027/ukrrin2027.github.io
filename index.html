@@ -18,27 +18,44 @@
             margin: 0;
             padding: 0;
             color: var(--text-color);
-            /* Background Wallpaper Setup */
+            background-color: #f8f9fa;
+            line-height: 1.6;
+        }
+        /* Hero Banner / Wallpaper Section */
+        .hero-banner {
+            position: relative;
             background-image: url('32378.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
-            line-height: 1.6;
-        }
-        header {
-            background-color: rgba(27, 38, 59, 0.95);
             color: white;
-            padding: 2.5rem 1rem;
             text-align: center;
+            padding: 100px 20px;
         }
-        header h1 {
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(27, 38, 59, 0.75);
+            z-index: 1;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .hero-content h1 {
             margin: 0 0 10px 0;
-            font-size: 2.2rem;
+            font-size: 2.5rem;
         }
-        header p {
-            font-size: 1.2rem;
+        .hero-content p {
+            font-size: 1.3rem;
             color: var(--accent-color);
-            margin: 0;
+            margin: 5px 0;
+            font-weight: 600;
         }
         .container {
             max-width: 1000px;
@@ -59,6 +76,36 @@
             color: var(--primary-color);
             font-size: 1.8rem;
             margin-top: 0;
+        }
+        /* Registration Pricing Grid */
+        .pricing-grid {
+            display: flex;
+            gap: 20px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        .price-card {
+            flex: 1;
+            min-width: 250px;
+            background: #fdfdfd;
+            border: 2px solid #eaeaea;
+            border-radius: 6px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
+        .price-card h3 {
+            color: var(--primary-color);
+            margin-top: 0;
+        }
+        .price {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--accent-color);
+            background: #1b263b;
+            padding: 10px;
+            border-radius: 4px;
+            margin: 15px 0;
         }
         .btn {
             display: inline-block;
@@ -86,10 +133,15 @@
 </head>
 <body>
 
-    <header>
-        <h1>UKRRIN 2027 Annual Student Conference</h1>
-        <p>University of Leeds | January 12–13, 2027</p>
-    </header>
+    <!-- Hero Wallpaper Banner -->
+    <div class="hero-banner">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>UKRRIN Student Conference</h1>
+            <p>12th-13th January 2027</p>
+            <p>University of Leeds</p>
+        </div>
+    </div>
 
     <div class="container">
         <!-- Welcome / About Section -->
@@ -105,13 +157,31 @@
             <a href="#submit" class="btn">Submit Your Abstract</a>
         </section>
 
+        <!-- Registration Section -->
+        <section>
+            <h2>Registration Fees</h2>
+            <p>Select your attendance type below to secure your place at the conference:</p>
+            <div class="pricing-grid">
+                <div class="price-card">
+                    <h3>In-Person Attendance</h3>
+                    <div class="price">£32</div>
+                    <p>Includes full access to conference sessions, networking events, and conference materials on-site at Leeds.</p>
+                </div>
+                <div class="price-card">
+                    <h3>Online Attendance</h3>
+                    <div class="price">£15</div>
+                    <p>Includes live-stream access to digital sessions and remote presentation capabilities.</p>
+                </div>
+            </div>
+        </section>
+
         <!-- Key Dates & Info -->
         <section>
             <h2>Key Information</h2>
             <ul>
-                <li><strong>Conference Dates:</strong> January 12–13, 2027</li>
+                <li><strong>Conference Dates:</strong> 12th-13th January 2027</li>
                 <li><strong>Venue:</strong> University of Leeds, Leeds, UK</li>
-                <li><strong>Format:</strong> In-person student presentations and networking</li>
+                <li><strong>Format:</strong> Hybrid (In-person and Online options available)</li>
             </ul>
         </section>
     </div>
